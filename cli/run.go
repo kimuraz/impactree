@@ -100,8 +100,6 @@ func Run(args []string) {
 	fmt.Println("Settings:")
 	fmt.Println("Report type: " + report_type)
 	fmt.Println("Output directory: " + output_dir)
-	fmt.Println("Directories to scan: %v", dirs)
-	fmt.Println("Verbose mode: %v", verbose)
 
 	var relations []Rel
 	files := GetAllFiles(dirs, verbose)

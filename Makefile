@@ -14,3 +14,10 @@ install:
 
 run:
 	go run main.go $(RUN_ARGS)
+
+clean:
+	rm -rf $(BIN_PATH)
+	rm -rf $(INSTALL_PATH)/impactree
+
+test:
+	go test -v ./...
