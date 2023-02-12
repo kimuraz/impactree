@@ -5,7 +5,6 @@ import "fmt"
 var argsRun = map[string]string{
 	"--help":      "-h, Show list of accepted arguments",
 	"--json":      "Generate a JSON report",
-	"--html":      "Generate a HTML report",
 	"--csv":       "Generate a CSV report",
 	"--no-report": "Don't generate a report",
 	"--dir":       "-d, Directory to scan",
