@@ -1,9 +1,16 @@
-$BIN_PATH=bin/impactree
-$SRC_PATH=src
+INSTALL_PATH:=/usr/bin/
+BIN_PATH:=bin
+
+ifeq (run, $(firstword $(MAKECMDGOALS)))
+  RUN_ARGS := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
+  $(eval $(RUN_ARGS):;@:)
+endif
 
 install:
-	mkdir -p $BIN_PATH
-	go build -o $BIN_PATH/impactree $SRC_PATH/main.go
+	mkdir -p $(BIN_PATH)
+	go build -o $(BIN_PATH)/impactree
+	chmod +x $(BIN_PATH)/impactree
+	cp $(BIN_PATH)/impactree $(INSTALL_PATH)
 
 run:
-	go run $SRC_PATH/main.go
+	go run main.go $(RUN_ARGS)
